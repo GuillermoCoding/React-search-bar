@@ -12,38 +12,36 @@ class SearchBar extends Component {
 			}
 		}
     onChange(selectedItem){
-        console.log('onChange');
-        console.log(selectedItem);
+			this.setState({input: selectedItem});
     }
     async onInputValueChange(input){
-				await this.setState({input});
-				const results = await this.props.client.query({
-					query: fetchSuggestions,
-					variables: {
-						input: this.state.input
-					}
-				});
-				await this.setState({items: results.data.suggestions});
+			await this.setState({input});
+			const results = await this.props.client.query({
+				query: fetchSuggestions,
+				variables: {
+					input: this.state.input
+				}
+			});
+			this.setState({items: results.data.suggestions});
     }
     render(){
         return (
             <DownShift
 								inputValue={this.state.input}
-                onChange={this.onChange}
+                onChange={this.onChange.bind(this)}
                 onInputValueChange={this.onInputValueChange.bind(this)}
-                render={({getInputProps,getItemProps,isOpen, selectedItem})=>(
+                render={({getInputProps,getItemProps,isOpen, selectedItem,highlightedIndex})=>(
                     <div>
 											<input {...getInputProps()} type="text"/>
 											{isOpen?(
 												<div>
-													{this.state.items.map(result=>{
-														console.log(selectedItem);
+													{this.state.items.map((result,index)=>{
 														return (
 															<div 
 																{...getItemProps({item: result})} 
 																key={result}
 																style={{
-																	backgroundColor: selectedItem === result ? 'gray' : 'white'
+																	backgroundColor: highlightedIndex === index ? 'gray' : 'white'
 																}}
 																>
 																{result}

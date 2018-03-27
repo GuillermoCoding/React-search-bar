@@ -9,7 +9,7 @@ import { ApolloProvider } from 'react-apollo';
 const cache = new InMemoryCache();
 
 const client = new ApolloClient({
-    link: new HttpLink({uri: 'http://localhost:4000/graphql'}),
+    link: new HttpLink({uri: 'https://downshift-address-autocomplete.herokuapp.com/graphql'}),
     cache
 });
 const Root = ()=>{
