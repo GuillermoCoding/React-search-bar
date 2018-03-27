@@ -8,3 +8,6 @@ Implementation of an autocomplete address searchbar using Paypal's [Downshift](h
 GraphIQL screenshot
 ![alt text](https://github.com/GuillermoCoding/downshift-address-autocomplete/blob/master/images/graphiql-screenshot.png)
 
+Demo
+![alt text](https://github.com/GuillermoCoding/downshift-address-autocomplete/blob/master/images/downshift-auto-complete.gif)
+
