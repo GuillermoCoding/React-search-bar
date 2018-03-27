@@ -17,10 +17,12 @@
   },
   "homepage": "https://github.com/GuillermoCoding/downshift-address-autocomplete#readme",
   "dependencies": {
+    "axios": "^0.18.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.4",
     "babel-preset-react": "^6.24.1",
+    "dotenv": "^5.0.1",
     "express": "^4.16.3",
     "express-graphql": "^0.6.12",
     "graphql": "^0.13.2",
