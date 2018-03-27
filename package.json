@@ -1,6 +1,9 @@
 {
   "name": "downshift-address-autocomplete",
   "version": "1.0.0",
+  "engines": {
+    "node": "9.7.1"
+  },
   "description": "Downshift autocomplete search bar with Google places API integration",
   "main": "index.js",
   "scripts": {
