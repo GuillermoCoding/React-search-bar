@@ -5,7 +5,7 @@
     "node": "9.7.1"
   },
   "description": "Downshift autocomplete search bar with Google places API integration",
-  "main": "index.js",
+  "main": "App.js",
   "scripts": {
     "start": "node server/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -29,6 +29,7 @@
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.4",
     "babel-preset-react": "^6.24.1",
+    "css-loader": "^0.28.11",
     "dotenv": "^5.0.1",
     "downshift": "^1.31.2",
     "express": "^4.16.3",
@@ -39,6 +40,7 @@
     "react": "^16.2.0",
     "react-apollo": "^2.1.1",
     "react-dom": "^16.2.0",
+    "style-loader": "^0.20.3",
     "webpack": "^4.3.0",
     "webpack-dev-middleware": "^3.1.0"
   }

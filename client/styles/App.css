@@ -1,0 +1,11 @@
+.container {
+    width:100%;
+    height: 35em;
+}
+.header {
+    color: rgb(51, 51, 51);
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 2.3em;
+    margin-left: 30%;
+}

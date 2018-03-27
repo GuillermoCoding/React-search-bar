@@ -5,7 +5,7 @@ console.log('webpack');
 console.log(path.resolve(__dirname,'./client'));
 module.exports = {
 	devtool: '#source-map',
-	entry: ['./client/index.js'],
+	entry: ['./client/App.js'],
 	output : {
 		path: path.resolve(__dirname,'client'),
 		filename: './bundle.js',
@@ -16,6 +16,10 @@ module.exports = {
 				test: /\.js$/,
 				loader: 'babel-loader',
 				exclude: [/node_modules/,/server.js/]
+			},
+			{
+				test:/\.css$/,
+				loader: 'style-loader!css-loader?modules=true&localIdentName=[name]__[local]___[hash:base64:5]'
 			}
 		]
 	},
