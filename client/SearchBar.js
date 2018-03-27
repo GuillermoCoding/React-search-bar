@@ -58,7 +58,6 @@ class SearchBar extends Component {
             />
         );
     }
-
 }
 
 export default withApollo(SearchBar);
