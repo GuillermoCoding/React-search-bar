@@ -50,11 +50,11 @@ class SearchBar extends Component {
                 })}
               </div>
             ):null}
-</div>
-)}
-/>
-);
-}
+          </div>
+        )}
+      />
+    );
+  }
 }
 
 export default withApollo(SearchBar);
