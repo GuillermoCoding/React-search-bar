@@ -10,48 +10,46 @@ class SearchBar extends Component {
     this.state = {
       input: '',
       items: []
-}
-}
-onChange(selectedItem){
-this.setState({input: selectedItem});
-}
-async onInputValueChange(input){
-await this.setState({input});
-const results = await this.props.client.query({
-query: fetchSuggestions,
-variables: {
-input: this.state.input
-}
-});
-this.setState({items: results.data.suggestions});
-}
-render(){
-return (
-<DownShift
-inputValue={this.state.input}
-onChange={this.onChange.bind(this)}
-onInputValueChange={this.onInputValueChange.bind(this)}
-render={({getInputProps,getItemProps,isOpen, selectedItem,highlightedIndex})=>(
-<div>
-<input placeholder={'Start typing..'} className={styles.searchBar} {...getInputProps()} type="text"/>
-{isOpen?(
-<div className={styles.results}>
-{this.state.items.map((result,index)=>{
-return (
-<div
-className={styles.item} 
-{...getItemProps({item: result})} 
-key={result}
-style={{
-backgroundColor: highlightedIndex === index ? 'rgb(179, 218, 255)' : 'white'
-}}
->
-{result}
-</div>
-);
-})}
-</div>
-):null}
+    }
+  }
+  onChange(selectedItem){
+    this.setState({input: selectedItem});
+  }
+  async onInputValueChange(input){
+    await this.setState({input});
+    const results = await this.props.client.query({
+      query: fetchSuggestions,
+      variables: {
+        input: this.state.input
+      }
+    });
+    this.setState({items: results.data.suggestions});
+  }
+  render(){
+    return (
+      <DownShift
+        inputValue={this.state.input}
+        onChange={this.onChange.bind(this)}
+        onInputValueChange={this.onInputValueChange.bind(this)}
+        render={({getInputProps,getItemProps,isOpen, selectedItem,highlightedIndex})=>(
+          <div>
+            <input placeholder={'Start typing..'} className={styles.searchBar} {...getInputProps()} type="text"/>
+            {isOpen?(
+              <div className={styles.results}>
+                {this.state.items.map((result,index)=>{
+                  return (
+                    <div
+                      className={styles.item} 
+                      {...getItemProps({item: result})} 
+                      key={result}
+                      style={{backgroundColor: highlightedIndex === index ? 'rgb(179, 218, 255)' : 'white'}}
+                    >
+                      {result}
+                    </div>
+                  );
+                })}
+              </div>
+            ):null}
 </div>
 )}
 />
