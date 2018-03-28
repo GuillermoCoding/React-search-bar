@@ -6,10 +6,10 @@ import styles from './styles/SearchBar.css';
 
 class SearchBar extends Component {
   constructor(props){
-		super(props);
-		this.state = {
-			input: '',
-			items: []
+	  super(props);
+	  this.state = {
+		  input: '',
+		  items: []
 		}
 	}
 	onChange(selectedItem){
