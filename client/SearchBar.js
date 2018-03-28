@@ -5,7 +5,7 @@ import fetchSuggestions from './queries/fetchSuggestions';
 import styles from './styles/SearchBar.css';
 
 class SearchBar extends Component {
-    constructor(props){
+  constructor(props){
 		super(props);
 		this.state = {
 			input: '',
